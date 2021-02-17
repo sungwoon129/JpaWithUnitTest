@@ -3,7 +3,6 @@ package com.diarymaker.diary.web;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -15,15 +14,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class IndexControllerTest {
 
     @Autowired
-    TestRestTemplate template;
+    private TestRestTemplate restTemplate;
 
+    @Test
+    public void index를_리턴한다() throws Exception {
+        //given
+        String expectedString = "2021 스터디 플래너";
 
-/*    @Test
-    public void 메인페이지_로딩() {
-    //when
-    String body = template.getForObject("/",String.class);
+        //when
+        String body = restTemplate.getForObject("/",String.class);
 
-    //then
-    assertThat(body).isEqualTo("2021 다이어리");
-    }*/
+        //then
+        assertThat(body).contains(expectedString);
+    }
+
 }

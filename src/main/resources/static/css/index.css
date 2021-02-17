@@ -1,0 +1,33 @@
+body {
+    background-image: url('/image/background/background.jpg');
+    background-size: cover;
+    height:100vh;
+}
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+
+.title > h1 {
+    color: #FFF;
+    opacity: .8;
+    font-size: 4rem;
+    cursor: pointer;
+}

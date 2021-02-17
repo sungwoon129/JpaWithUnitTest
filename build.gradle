@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
 
     //database
     implementation('com.h2database:h2')
@@ -25,7 +26,14 @@ dependencies {
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
+    //hot reload
+    implementation('org.springframework.boot:spring-boot-devtools')
+
+    //test
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    //security
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
 
 test {
